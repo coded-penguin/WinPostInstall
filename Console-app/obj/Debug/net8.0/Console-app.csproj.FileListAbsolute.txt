@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\bin\Debug\net8.0\Console-app.exe
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\bin\Debug\net8.0\Console-app.deps.json
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\bin\Debug\net8.0\Console-app.runtimeconfig.json
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\bin\Debug\net8.0\Console-app.dll
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\bin\Debug\net8.0\Console-app.pdb
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.AssemblyInfo.cs
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.sourcelink.json
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.dll
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\refint\Console-app.dll
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.pdb
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\Console-app.genruntimeconfig.cache
+C:\Users\User\Desktop\Project\WinSetupTool\Console-app\obj\Debug\net8.0\ref\Console-app.dll
