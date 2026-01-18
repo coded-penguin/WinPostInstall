@@ -8,4 +8,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Hardware.Info" Version="101.1.0.1" />
+  </ItemGroup>
+
 </Project>

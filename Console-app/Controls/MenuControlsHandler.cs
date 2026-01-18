@@ -1,68 +1,49 @@
-using WinPostInstall.Core;
+using WinPostInstall.Core.MenuSystem;
+using WinPostInstall.Core.Rendering;
 
-namespace WinPostInstall.Controls;
+namespace WinPostInstall.Core.Controls;
 
-public static class MenuControlsHandler
+public class MenuControlsHandler
 {
-  public static void HandleControls(List<MenuItem> menu, ref int selectedIndex)
+  private readonly Menu _menu;
+  private readonly MenuRenderer _renderer;
+  private bool _isRunning = true;
+
+  public MenuControlsHandler (Menu menu)
   {
-    var key = Console.ReadKey(true).Key;
-
-    switch (key)
-    {
-      case ConsoleKey.UpArrow:
-        selectedIndex--;
-        if (selectedIndex < 0) selectedIndex = GetFlatCount(menu) - 1;
-        break;
-
-      case ConsoleKey.DownArrow:
-        selectedIndex++;
-        if (selectedIndex >= GetFlatCount(menu)) selectedIndex = 0;
-        break;
-
-      case ConsoleKey.Enter:
-        var item = GetItemByIndex(menu, selectedIndex);
-        if (item.isLeaf)
-          item.OnSelect?.Invoke();
-        else
-          item.isExpanded = !item.isExpanded;
-        break;
-    }
+    _menu = menu;
+    _renderer = new MenuRenderer();
   }
 
-  private static int GetFlatCount(List<MenuItem> items)
+  public void Run()
   {
-    int count = 0;
-    foreach (var item in items)
+    Console.CursorVisible = false;
+
+    while(_isRunning)
     {
-      count++;
-      if (item.isExpanded && item.Children.Any())
-        count += GetFlatCount(item.Children);
-    }
+      _renderer.Render(_menu);
 
-    return count;
-  }
+      var key = Console.ReadKey(true).Key;
 
-  private static MenuItem GetItemByIndex(List<MenuItem> items, int target, ref int index)
-  {
-    foreach(var item in items)
-    {
-      if (index == target) return item;
-      index++;
-
-      if (item.isExpanded && item.Children.Any())
+      switch (key)
       {
-        var found = GetItemByIndex(item.Children, target, ref index);
-        if (found != null) return found;
+        case ConsoleKey.UpArrow:
+          _menu.moveUp();
+          break;
+
+        case ConsoleKey.DownArrow:
+          _menu.moveDown();
+          break;
+
+        case ConsoleKey.Enter:
+          _menu.Select();
+          break;
+
+        case ConsoleKey.Backspace:
+        case ConsoleKey.Escape:
+         _menu.Back();
+         break;
       }
     }
-
-    return null;
-  }
-
-  private static MenuItem GetItemByIndex(List<MenuItem> items, int target)
-  {
-    int index = 0;
-    return GetItemByIndex(items, target, ref index);
   }
 }
